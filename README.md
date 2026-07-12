@@ -1,5 +1,9 @@
 # Simon Says Game 🎮
 
+## 🌐 Live Demo
+
+https://1amit3.github.io/Simon-says-Game/
+
 A Simon Says memory game built using HTML, CSS, and JavaScript. This project tests the player's memory by generating a random sequence of colors that the player must repeat correctly.
 
 ## 🚀 Features
