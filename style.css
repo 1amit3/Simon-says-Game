@@ -1,24 +1,43 @@
-body {
+body{
+    margin:0;
+    min-height:100vh;
     text-align:center;
+    font-family:'Poppins',sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #FFFFFF 0%,
+        #F8FAFC 35%,
+        #EEF2F7 70%,
+        #E5EAF1 100%
+    );
+}
+.button-container{
+    width: fit-content;
+    margin: 30px auto;
+    transition: all .6s ease;
 }
 
-.button-container{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
 .line-one,
 .line-two{
-    display: flex;
+    display:flex;
+    justify-content:center;
+    gap:2rem;
+    transition:all .6s ease;
 }
 
-
-.btn {
+.btn{
     height:200px;
     width:200px;
-    border:3px solid black;
-    margin:2rem;
-    border-radius:40%
+    margin:1rem;
+    border:3px solid #000;
+    border-radius:35%;
+    cursor:pointer;
+    transition:
+        transform .6s ease,
+        margin .6s ease,
+        border-radius .6s ease,
+        box-shadow .6s ease;
 }
 
 .red {
@@ -37,14 +56,114 @@ body {
     background-color:purple;
 }
 
-
-
 .gameflash{
-    background-color:pink;
+    background:#fff;
+    transform:scale(1.08);
+}
+
+.userflash{
+    background:#90EE90;
+    transform:scale(1.05);
+}
+
+.btn:hover{
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+}
+
+
+.red:hover,
+.yellow:hover,
+.green:hover,
+.purple:hover{
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 18px 35px rgba(0,0,0,.35);
+}
+
+
+h1{
+    margin-top:30px;
+    font-size:3rem;
+    color:#222;
+}
+h2{
+    color: #555;
+    font-weight: 500;
+    min-height: 70px;
+    margin: 10px 0 20px;
+    line-height: 1.4;
+    min-height: 60px;
+    overflow:hidden;
 }
 
 
 
-.userflash{
-    background-color:aquamarine;
+
+.collapse .line-one,
+.collapse .line-two{
+    gap:0;
+}
+
+
+
+.collapse .btn{
+    margin:0;
+    position:relative;
+}
+.collapse .red{
+    transform: translate(118px,118px) scale(1);
+    z-index:1;
+}
+
+.collapse .yellow{
+    transform: translate(-88px,118px) scale(.88);
+    z-index:2;
+}
+
+.collapse .green{
+    transform: translate(118px,-88px) scale(.76);
+    z-index:3;
+}
+
+.collapse .purple{
+    z-index:4;
+    transform-origin:center center;
+    border-radius:0;
+    animation:spin 2s linear infinite;
+}
+
+@keyframes spin{
+
+0%{
+    transform: translate(-80px,-83px) scale(.75) rotate(0deg);
+}
+
+100%{
+    transform: translate(-80px,-83px) scale(.75) rotate(360deg);
+}
+
+}
+
+
+.start-text{
+    animation:pulseText 1.4s ease-in-out infinite;
+}
+
+.start-text:not(:empty){
+    display:block;
+}
+
+@keyframes pulseText{
+
+0%{
+    opacity:.6;
+}
+
+50%{
+    opacity:1;
+}
+
+100%{
+    opacity:.6;
+}
+
 }
