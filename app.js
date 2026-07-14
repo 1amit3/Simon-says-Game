@@ -28,27 +28,25 @@ sounds.wrong.volume = 0.15;
 
 h2.classList.add("start-text");
 
-document.addEventListener("keypress", function () {
+function startGame() {
 
-    if(gameOver){
-
+    if (gameOver) {
         reset();
         gameOver = false;
         return;
-
     }
 
-    if(!started){
-
+    if (!started) {
         started = true;
 
         setTimeout(() => {
             levelup();
-        },1200);
-
+        }, 1200);
     }
+}
 
-});
+document.addEventListener("keypress", startGame);
+document.addEventListener("touchstart", startGame);
 
 function levelup(){
    h2.style.animationPlayState = "paused";
